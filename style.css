@@ -1,0 +1,334 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background: #0d0d0d;
+    color: #fff;
+    overflow-x: hidden;
+    /* 🔥 remove barra horizontal */
+}
+
+/* HEADER */
+header {
+    width: 100%;
+    background: rgba(15, 15, 15, 0.95);
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 12%;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+}
+
+.nav {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-item a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 12px;
+    transition: 0.3s;
+}
+
+.nav-item a:hover {
+    color: rgb(255, 0, 0);
+    border-radius:1px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: #111;
+    border: 1px solid #0ff;
+    top: 100%;
+    left: 0;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px;
+    color: #fff;
+}
+
+.dropdown-content a:hover {
+    background: rgb(255, 0, 0);
+    color: #ffffff;
+}
+
+.nav-item:hover .dropdown-content {
+    display: block;
+}
+
+/* LOGO */
+header img {
+    width: 120px;
+    height: auto;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+}
+
+/* SEÇÃO DE LANÇAMENTOS */
+.lancamentos {
+    max-width: 1100px;
+    margin: 3rem auto;
+    text-align: center;
+    padding: 2rem;
+}
+
+.lancamentos h2 {
+    font-size: 2rem;
+    color: #0ff;
+    margin-bottom: 2rem;
+    text-shadow: 0 0 10px #0ff;
+    position: absolute;
+    top: 22%;
+    left: 20%;
+}
+
+/* CONTAINER DO DESTAQUE */
+.lancamento-destaque {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* IMAGEM GRANDE */
+.lancamento-imagem img {
+    width: 500px;
+    max-width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 0 20px #0ff;
+    transition: 0.3s ease;
+    position: absolute;
+    top: 30%;
+    left: 15%;
+}
+
+/* INFO AO LADO */
+.lancamento-info {
+    max-width: 400px;
+    text-align: left;
+}
+
+.lancamento-info h3 {
+    font-size: 1.8rem;
+    color: #ff00ff;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 10px #ff00ff;
+    position: absolute;
+    left: 55%;
+    top: 30%;
+}
+
+.lancamento-info p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #ccc;
+    position: absolute;
+    left: 55%;
+    top: 37%;
+}
+
+/* MINIATURAS */
+.lancamento-thumbs {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    overflow-x: auto;
+    padding: 10px;
+    scrollbar-width: none;/* Firefox */
+    position:absolute;
+    width: 100px;
+    height: 50px;
+    top: 80%;
+    left: 20%;
+}
+
+.lancamento-thumbs::-webkit-scrollbar {
+    display: none;/* Chrome */
+}
+
+.lancamento-thumbs img {
+    width: 100px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: 0.3s;
+    border: 2px solid transparent;
+}
+
+.lancamento-thumbs img:hover,
+.lancamento-thumbs img.active {
+    opacity: 1;
+    transform: scale(1.1);
+    border-color: #0ff;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+    .lancamento-destaque {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .lancamento-info {
+        text-align: center;
+    }
+}
+
+/* Imagem da Logo */
+img {
+    position: absolute;
+    width: 140px;
+    height: auto;
+    top: -6%;
+    left: 2%;
+}
+
+/* Caixa de Pesquisa */
+.search-box {
+    display: flex;
+    position: absolute;
+    top: 3.5%;
+    left: 15%;
+    align-items: center;
+    background: #ffffffb6;
+    border-radius: 25px;
+    padding: 0px 44px 0px 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.386);
+    cursor: pointer;
+    height: 30px;
+}
+
+/* Texto Dentro do Barra de Pesquisa */
+.search-box input {
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 16px;
+    padding: 5px;
+    width: 400px;
+    font-size: .875rem;
+}
+
+/* Scale da barra de Pesquisa */
+.search-box:hover {
+    transform: scale(1.020);
+}
+
+/* Lupa */
+.search-box img {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: 20%;
+    left: 92%;
+}
+
+/* Butão Upload */
+.button button {
+    color: #fff;
+    border-radius: 50px;
+    background-color: #00ba13;
+    width: 100px;
+    height: 33px;
+    position: absolute;
+    top: 3%;
+    right: 25%;
+    align-items: end;
+    cursor: pointer;
+    border: none;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.386);
+}
+
+/* Scale do button */
+.button button:hover {
+    transform: scale(1.020);
+    background-color: #00e617;
+}
+
+/* Butão Cadastre */
+.button1 button {
+    color: #fff;
+    border-radius: 50px;
+    background-color: #0067d4;
+    width: 120px;
+    height: 33px;
+    position: absolute;
+    top: 3%;
+    right: 15%;
+    cursor: pointer;
+    border: none;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.386);
+}
+
+/* Scale do button */
+.button1 button:hover {
+    transform: scale(1.020);
+    background-color: #007bff;
+}
+
+/* Butão Entrar */
+.button2 button {
+    color: #000000;
+    border-radius: 50px;
+    background-color: #dad9d98f;
+    width: 100px;
+    height: 33px;
+    position: absolute;
+    top: 3%;
+    right: 5%;
+    cursor: pointer;
+    border: none;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.386);
+}
+
+/* Scale do button */
+.button2 button:hover {
+    transform: scale(1.020);
+    background-color: #bbbaba8f;
+}
+
+/* ou */
+.linha2 p {
+    position: absolute;
+    right: 13.3%;
+    top: 4%;
+    color: #0d0d0d82;
+}
+
+/* Linha */
+.linha {
+    background-color: #dc1616;
+    width: 100%;
+    height: 80px;
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    display: flex;
+    z-index: -1;
+}
